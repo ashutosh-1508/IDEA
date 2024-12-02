@@ -57,7 +57,7 @@ class _SignInPageState extends State<SignInPage> {
               ),
               SizedBox(height: 30),
 
-              // Username Input Field
+              
               TextField(
                 controller: _usernameController,
                 decoration: InputDecoration(
@@ -70,7 +70,7 @@ class _SignInPageState extends State<SignInPage> {
               ),
               SizedBox(height: 10),
 
-              // Password Input Field
+              
               TextField(
                 controller: _passwordController,
                 obscureText: true,
@@ -84,15 +84,15 @@ class _SignInPageState extends State<SignInPage> {
               ),
               SizedBox(height: 20),
 
-              // Sign In Button
+              
               ElevatedButton(
                 onPressed: _handleSignIn,
                 child: Text(
                   'Sign In',
-                  style: TextStyle(color: Colors.black, fontSize: 16), // Black text
+                  style: TextStyle(color: Colors.black, fontSize: 16), 
                 ),
                 style: ElevatedButton.styleFrom(
-                  side: BorderSide(color: Colors.blue, width: 2), // Blue border
+                  side: BorderSide(color: Colors.blue, width: 2),
                   padding: EdgeInsets.symmetric(vertical: 14),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(8),
@@ -132,7 +132,7 @@ class _SignInPageState extends State<SignInPage> {
     String username = _usernameController.text;
     String password = _passwordController.text;
 
-    // Simulated correct password (for demonstration purposes)
+  
     String correctPassword = 'admin';
 
     if (username == 'admin_admin' && password == correctPassword) {
@@ -142,7 +142,7 @@ class _SignInPageState extends State<SignInPage> {
       // Regular user login successful
       Navigator.push(context, MaterialPageRoute(builder: (context) => UserHomePage()));
     } else {
-      // Incorrect credentials
+      
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text('Invalid username or password')),
       );
@@ -150,12 +150,12 @@ class _SignInPageState extends State<SignInPage> {
   }
 
   void _forgotPassword() {
-    // Logic for forgot password (e.g., send reset email)
+   
     print('Forgot Password clicked');
   }
 
   void _createAccount() {
-    // Navigate to the create account page (or show a modal)
+    
     print('Create Account clicked');
   }
 }
