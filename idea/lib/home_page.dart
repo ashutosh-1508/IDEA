@@ -2,7 +2,6 @@ import 'dart:async'; // Add this import for Timer
 import 'package:flutter/material.dart';
 import 'profile_screen.dart'; // Import your ProfilePage here
 
-
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -66,7 +65,9 @@ class _HomePageState extends State<HomePage> {
             // Navigate to the ProfileScreen when tapped
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => ProfilePage()), // Updated to navigate to ProfilePage
+              MaterialPageRoute(
+                  builder: (context) =>
+                      ProfilePage()), // Updated to navigate to ProfilePage
             );
           },
           child: const Text('Hi, Sanket!'),
@@ -201,8 +202,8 @@ class _HomePageState extends State<HomePage> {
                   children: [
                     buildCourseCard('Introduction to AI', '168K Learners',
                         'FREE', Icons.computer),
-                    buildCourseCard(
-                        'Networking Basics', '120K Learners', '\₹50', Icons.wifi),
+                    buildCourseCard('Networking Basics', '120K Learners',
+                        '\₹50', Icons.wifi),
                     buildCourseCard('Cyber Security', '98K Learners', '\₹100',
                         Icons.security),
                   ],

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:idea/registration_page.dart';
 import 'home_page.dart'; // Import your home_page.dart file
 
 void main() {
@@ -11,6 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Learning App',
       theme: ThemeData(primarySwatch: Colors.blue),
       home: const SignInPage(), // Initial screen is the SignInPage
@@ -115,8 +117,15 @@ class _SignInPageState extends State<SignInPage> {
               children: [
                 Text('New here? '),
                 TextButton(
-                  onPressed: _createAccount,
-                  child: Text('Create Account', style: TextStyle(color: Colors.blue)),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const RegistrationPage()),
+                    );
+                  },
+                  child: Text('Create Account',
+                      style: TextStyle(color: Colors.blue)),
                 ),
               ],
             ),
@@ -155,4 +164,3 @@ class _SignInPageState extends State<SignInPage> {
     print('Create Account clicked');
   }
 }
-
