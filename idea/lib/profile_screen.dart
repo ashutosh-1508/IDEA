@@ -1,18 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';  // Import SharedPreferences for session management
 
-void main() {
-  runApp(MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: ProfilePage(),
-    );
-  }
-}
+// Import the main.dart file or the file where your SignInPage is defined
+import 'main.dart'; // Ensure the path matches the actual location of your main.dart file
 
 class ProfilePage extends StatelessWidget {
   @override
@@ -25,7 +15,7 @@ class ProfilePage extends StatelessWidget {
       body: ListView(
         padding: EdgeInsets.all(16.0),
         children: [
-          // Header Section
+          // Header Section (Your frontend remains unchanged)
           Column(
             children: [
               CircleAvatar(
@@ -38,11 +28,11 @@ class ProfilePage extends StatelessWidget {
               ),
               SizedBox(height: 10),
               Text(
-                "Sanket kulkarni",
+                "Sanket Kulkarni",  // Change the name as per your profile
                 style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
               ),
               Text(
-                "sanket@gmail.com",
+                "sanket@gmail.com",  // Change email as per the profile
                 style: TextStyle(color: Colors.grey),
               ),
               Text("India", style: TextStyle(color: Colors.grey)),
@@ -50,7 +40,7 @@ class ProfilePage extends StatelessWidget {
           ),
           SizedBox(height: 20),
 
-          // Settings and Options
+          // Settings and Options (Your frontend remains unchanged)
           SwitchListTile(
             title: Text("Push Notifications"),
             value: true,
@@ -101,17 +91,31 @@ class ProfilePage extends StatelessWidget {
             trailing: Icon(Icons.arrow_forward_ios),
             onTap: () {},
           ),
+
+          // Sign Out Section (Update sign-out logic)
           ListTile(
             title: Text("Sign Out"),
             trailing: Icon(Icons.logout),
-            onTap: () {},
+            onTap: () async {
+              // Clear user session (if applicable)
+              final prefs = await SharedPreferences.getInstance();
+              await prefs.clear();  // Clears all saved data (e.g., login credentials)
+
+              // Navigate back to the SignInPage and remove all previous routes from the stack
+              Navigator.pushAndRemoveUntil(
+                context,
+                MaterialPageRoute(builder: (context) => SignInPage()),  // Replace with your SignInPage
+                (route) => false,  // This will remove all previous routes, effectively restarting the app
+              );
+            },
           ),
+          
           SizedBox(height: 20),
 
-          // Footer Section
+          // Footer Section (Your frontend remains unchanged)
           Center(
             child: Text(
-              "Version 11.8.17",
+              "Version 11.8.17",  // Example version text, change as needed
               style: TextStyle(color: Colors.grey),
             ),
           ),
