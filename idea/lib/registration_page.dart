@@ -57,7 +57,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
     // Navigate back to SignInPage
     Navigator.pushReplacement(
       context,
-      MaterialPageRoute(builder: (context) => const SignInPage()),
+      MaterialPageRoute(builder: (context) => SignInScreen()),
     );
   }
 
@@ -185,7 +185,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => const MyApp()),
+                        MaterialPageRoute(builder: (context) => MyApp()),
                       );
                     },
                     child:
