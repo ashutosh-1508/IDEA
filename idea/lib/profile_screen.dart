@@ -19,7 +19,6 @@ class ProfilePage extends StatelessWidget {
           Column(
             children: [
               CircleAvatar(
-                radius: 50,
                 backgroundColor: Colors.blue,
                 child: Text(
                   "S",
@@ -105,11 +104,11 @@ class ProfilePage extends StatelessWidget {
               Navigator.pushAndRemoveUntil(
                 context,
                 MaterialPageRoute(builder: (context) => SignInScreen()),  // Corrected to SignInScreen
-                    (route) => false,  // This will remove all previous routes, effectively restarting the app
+                (route) => false,  // This will remove all previous routes, effectively restarting the app
               );
             },
           ),
-
+          
           SizedBox(height: 20),
 
           // Footer Section (Your frontend remains unchanged)

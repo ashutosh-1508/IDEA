@@ -26,7 +26,7 @@ class _SignInScreenState extends State<SignInScreen> {
   bool _isEmailLogin = false; // Tracks if email login is selected
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
-
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -155,7 +155,7 @@ class _SignInScreenState extends State<SignInScreen> {
                     ),
                   ],
                 ),
-
+              
               // New here? Create Account link
               SizedBox(height: 20),
               Row(
